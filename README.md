@@ -33,5 +33,15 @@ Then by default jenkins run on 8080 port. Access jenkins on browser http://ipadd
      To see used port: ls -lpant
 
 ## Note: Oftenly jenkins not work cause of version jdk
+## Note: Avoid build and test on Jenkins server, its better to do client server
+## Note: Agent permanent- a permanent agent who always remained connected( listen, run)
+## Note: Agent - send request client to server
+## Note: 
 
 ## Createing agent and jobs
+
+Creating Agent and connected via ssh
+![freestyelwithssh](/Images/agent1.jpg)
+
+Creating agent and connected without ssh: fillup form and configure port from Jenkins security(Administrer jenkins->secriite->agent port->fixe (exemple 5000))
+![freestyelwithoutssh](/Images/agent2.jpg)
