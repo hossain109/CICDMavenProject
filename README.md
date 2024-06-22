@@ -41,7 +41,7 @@ Then by default jenkins run on 8080 port. Access jenkins on browser http://ipadd
 ## Createing agent and jobs
 
 Creating Agent and connected via ssh
-![freestyelwithssh](/Images/agent1.jpg)
+![freestyelwithssh](/images/agent1.jpg)
 
 Creating agent and connected without ssh: fillup form and configure port from Jenkins security(Administrer jenkins->secriite->agent port->fixe (exemple 5000))
-![freestyelwithoutssh](/Images/agent2.jpg)
+![freestyelwithoutssh](/images/agent2.jpg)
