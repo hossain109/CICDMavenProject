@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                git branch: 'main', url: 'https://github.com/hossain109/CICDMavenProject.git'
+                git branch: 'main', url: 'https://github.com/hossain109/CICDMavenProject.git',
+                credentialsId: 'Inaya109'
             }
         }
     }
