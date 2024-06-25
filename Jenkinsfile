@@ -9,8 +9,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'mvn --version'
-                sh 'java --version'
-                sh 'git --version'
+
             }
         }
         stage('Deploy') {
