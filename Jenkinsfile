@@ -8,12 +8,14 @@ pipeline {
         }
         stage('Test') {
             steps {
-                git branch: 'main', url: 'https://github.com/hossain109/CICDMavenProject.git'
+                sh 'mvn --version'
+                sh 'java --version'
+                sh 'git --version'
             }
         }
         stage('Deploy') {
             steps {
-                git branch: 'main', url: 'https://github.com/hossain109/CICDMavenProject.git'
+                echo "Deploying"
             }
         }
     }
