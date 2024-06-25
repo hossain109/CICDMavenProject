@@ -8,13 +8,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'mvn --version'
+                sh 'java --version'
 
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo "Deploying"
             }
         }
     }
