@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'Alma_projet' }
+    agent any
     stages {
         stage('build') {
             steps {
