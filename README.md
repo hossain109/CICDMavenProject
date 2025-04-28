@@ -1,47 +1,13 @@
-# CICDMavenProject
-## Install jenkins from document official
+# Basic Maven Example
 
-For installation follow officiel documentation according oprating system: https://www.jenkins.io/doc/book/installing/linux/
-For almalinux 8 must install open-jdk -11 otherwise jenkins not work because almalinux8 compatible with jdk11.
+This simple Maven project is importing JaCoCo's coverage report. For multi-module project example 
+see [multi-module Maven project](../maven-multimodule/README.md)
 
-      sudo wget -O /etc/yum.repos.d/jenkins.repo \ 
-      https://pkg.jenkins.io/redhat-stable/jenkins.repo
+## Usage
 
-      sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
-
-      sudo dnf upgrade
-
-###  Add required dependencies for the jenkins package
-      sudo dnf install fontconfig java-11-openjdk
-
-      sudo dnf install jenkins
-
-      sudo systemctl daemon-reload
-
-
-### Start jenkins:
-
-    Enable: sudo systemctl enable jenkins
-    Start: sudo systemctl start jenkins
-    Stop: sudo systemctl start jenkins
-
-Then by default jenkins run on 8080 port. Access jenkins on browser http://ipaddress:8080
-
-### Unblocak jenkins by put password: cat path
-### Troubleshoot:
-     To see jdk version installed: sudo alternatives --config java
-     To see used port: ls -lpant
-
-## Note: Oftenly jenkins not work cause of version jdk
-## Note: Avoid build and test on Jenkins server, its better to do client server
-## Note: Agent permanent- a permanent agent who always remained connected( listen, run)
-## Note: Agent - send request client to server
-## Note: 
-
-## Createing agent and jobs
-
-Creating Agent and connected via ssh
-![freestyelwithssh](/images/agent1.jpg)
-
-Creating agent and connected without ssh: fillup form and configure port from Jenkins security(Administrer jenkins->secriite->agent port->fixe (exemple 5000))
-![freestyelwithoutssh](/images/agent2.jpg)
+* Build the project, execute all the tests and analyze the project with SonarScanner for Maven (from the root of the project):
+    ```shell
+    mvn clean verify sonar:sonar
+    ```
+## Documentation
+[SonarScanner for Maven](https://docs.sonarsource.com/sonarqube/latest/analyzing-source-code/scanners/sonarscanner-for-maven/)
