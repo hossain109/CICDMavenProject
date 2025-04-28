@@ -23,4 +23,7 @@ public class Calculator {
 			throw new ArithmeticException("Divide By Zero");
 		}
 	}
+	 void sayHello() {
+    System.out.println("Hello World!");
+  } 
 }
