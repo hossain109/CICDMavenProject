@@ -2,5 +2,5 @@ projectKey=maven-project
 serverUrl=http://192.168.178.158:9000
 serverVersion=9.9.0.65466
 dashboardUrl=http://192.168.178.158:9000/dashboard?id=maven-project
-ceTaskId=AZZ9gXyDlMl2GrgicMIE
-ceTaskUrl=http://192.168.178.158:9000/api/ce/task?id=AZZ9gXyDlMl2GrgicMIE
+ceTaskId=AZZ9g840lMl2GrgicMIF
+ceTaskUrl=http://192.168.178.158:9000/api/ce/task?id=AZZ9g840lMl2GrgicMIF
