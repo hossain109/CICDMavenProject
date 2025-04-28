@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="10.23.0">
-<file name="C:\sonar-scanner-maven\src\main\java\com\acme\basic\HelloWorld.java">
+<file name="C:\CICDMavenProject\src\main\java\com\acme\basic\HelloWorld.java">
 </file>
-<file name="C:\sonar-scanner-maven\src\main\java\com\acme\basic\ResourceResponse.java">
+<file name="C:\CICDMavenProject\src\main\java\com\acme\basic\ResourceResponse.java">
 </file>
 </checkstyle>
