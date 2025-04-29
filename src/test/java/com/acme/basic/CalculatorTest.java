@@ -6,6 +6,6 @@ public class CalculatorTest {
 
   @Test
   public void sayHello() {
-    new Calculator().sayHello();
+    new HelloWorld().sayHello();
   }
 }
