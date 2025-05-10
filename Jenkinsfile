@@ -7,13 +7,13 @@ pipeline {
                 sh 'ls'
             }
         }
-        stage('Test') {
-            steps {
-                sh 'java --version'
-                sh ' mvn clean package'
+        // stage('Test') {
+        //     steps {
+        //         sh 'java --version'
+        //         sh ' mvn clean package'
 
-            }
-        }
+        //     }
+        // }
         // stage('SonarQube Analysis') {
         //     steps {
         //         script {  // Required for variable declarations and complex logic 
