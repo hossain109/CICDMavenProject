@@ -7,13 +7,13 @@ pipeline {
                 sh 'ls'
             }
         }
-        // stage('Test') {
-        //     steps {
-        //         sh 'java --version'
-        //         sh ' mvn clean package'
+        stage('Test') {
+            steps {
+                sh 'java --version'
+                sh ' mvn clean package'
 
-        //     }
-        // }
+            }
+        }
         // stage('SonarQube Analysis') {
         //     steps {
         //         script {  // Required for variable declarations and complex logic 
@@ -24,20 +24,20 @@ pipeline {
         //         }
         //     }
         // }
-        stage('Build docker image and image'){
-        environment{
-            DOCKER_IMAGE="sohrab109/maven:${BUILD_NUMBER}"
-            REGISTRY_CREDENTIALS = credentials('docker-cred')
-        }
-        steps{
-            script{
-            sh 'docker build -t ${DOCKER_IMAGE} .'
-            def dockerImage = docker.image("${DOCKER_IMAGE}")
-                docker.withRegistry('https://index.docker.io/v1/', "docker-cred") {
-                dockerImage.push()
-                    }
-                }
-            }
-        }
+        // stage('Build docker image and image'){
+        // environment{
+        //     DOCKER_IMAGE="sohrab109/maven:${BUILD_NUMBER}"
+        //     REGISTRY_CREDENTIALS = credentials('docker-cred')
+        // }
+        // steps{
+        //     script{
+        //     sh 'docker build -t ${DOCKER_IMAGE} .'
+        //     def dockerImage = docker.image("${DOCKER_IMAGE}")
+        //         docker.withRegistry('https://index.docker.io/v1/', "docker-cred") {
+        //         dockerImage.push()
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
