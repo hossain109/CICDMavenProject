@@ -39,5 +39,27 @@ pipeline {
                 }
             }
         }
+        stage{
+            environment{
+                GIT_REPO="CICDMavenProject"
+                GIT_USERNAME="hossain109"
+            }
+            steps{
+                withCredentials([gitUsernamePassword(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
+                // some block
+                sh '''
+                git config --global user.name "${GIT_USERNAME}"
+                git config --global user.email "mohammadhossain109@gmail.com"
+                
+                BUILD_NUMBER = "${BUILD_NUMBER}"
+                sed -i -e "s/maven.*/maven:${BUILD_NUMBER}/g" k8s_manifest/deployment.yaml
+                git add k8s_manifest/deployment.yaml
+                git commit -m "update deployment file"
+                git push https://${GITHUB_TOKEN}@github.com/${GIT_USERNAME}/${GIT_REPO} HEAD:main 
+
+                '''
+            }
+            }
+        }
     }
 }
