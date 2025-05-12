@@ -39,7 +39,7 @@ pipeline {
                     }
                 }
         }
-        stage{
+        stage('Update deployment file'){
             environment{
                 GIT_REPO="CICDMavenProject"
                 GIT_USERNAME="hossain109"
