@@ -45,7 +45,7 @@ pipeline {
                 GIT_USERNAME="hossain109"
             }
             steps{
-                withCredentials([gitUsernamePassword(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
+                withCredentials([credentialsId: 'github-token', variable: 'GITHUB_TOKEN']) {
                 // some block
                 sh '''
                 git config --global user.name "${GIT_USERNAME}"
