@@ -47,7 +47,7 @@ pipeline {
             steps{
                 withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
                 // some block
-                sh """
+                sh '''
                 git config --global user.name "${GIT_USERNAME}"
                 git config --global user.email "mohammadhossain109@gmail.com"
                 
@@ -57,7 +57,7 @@ pipeline {
                 git commit -m "update deployment file"
                 git push https://${GITHUB_TOKEN}@github.com/${GIT_USERNAME}/${GIT_REPO} HEAD:main 
 
-                """
+                '''
                 }
             }
         }
