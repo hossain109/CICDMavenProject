@@ -52,7 +52,7 @@ pipeline {
                 git config --global user.email "mohammadhossain109@gmail.com"
                 
                 BUILD_NUMBER = "${BUILD_NUMBER}"
-                sed -i -e "s/maven.*/maven:BUILD_NUMBER/g" k8s_manifest/deployment.yaml
+                sed -i -e "s/maven.*/maven:${env.BUILD_NUMBER}/g" k8s_manifest/deployment.yaml
                 git add k8s_manifest/deployment.yaml
                 git commit -m "update deployment file"
                 git push https://${GITHUB_TOKEN}@github.com/${GIT_USERNAME}/${GIT_REPO} HEAD:main 
